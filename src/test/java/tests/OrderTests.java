@@ -45,4 +45,66 @@ public class OrderTests extends BaseTest {
         //TODO: Add elements to model and assert that product is visible in cart.
         softAssert.assertAll();
     }
+
+    @Test
+    public void WrongDiscountCodeProvidedTest() {
+        //Arrange
+        var cartPage = homePage
+                .SelectSearchForProducts()
+                .FillProductName(TestData.ManchesterUnitedShirt)
+                .ClickSearchForProduct()
+                .SelectAddToCart()
+                .SelectSeeCart()
+                .FillDiscountCode(TestData.DiscountCode)
+
+                //Act
+                .SelectSubmitCode();
+
+        //Assert
+        softAssert.assertTrue(cartPage.errorMessage.isDisplayed(), "Error message is not displayed");
+        softAssert.assertEquals(cartPage.errorMessage.getText(), String.format("Kupon \"%s\" nie istnieje!", TestData.DiscountCode));
+
+        softAssert.assertAll();
+    }
+
+    @Test
+    public void DiscountCodeNotProvidedTest() {
+        //Arrange
+        var cartPage = homePage
+                .SelectSearchForProducts()
+                .FillProductName(TestData.ManchesterUnitedShirt)
+                .ClickSearchForProduct()
+                .SelectAddToCart()
+                .SelectSeeCart()
+
+                //Act
+                .SelectSubmitCode();
+
+        //Assert
+        softAssert.assertTrue(cartPage.errorMessage.isDisplayed(), "Error message is not displayed");
+        softAssert.assertEquals(cartPage.errorMessage.getText(), "Proszę wpisać kod kuponu.");
+
+        softAssert.assertAll();
+    }
+
+    @Test
+    public void UpdateCartTest() {
+        //Arrange
+        var cartPage = homePage
+                .SelectSearchForProducts()
+                .FillProductName(TestData.ManchesterUnitedShirt)
+                .ClickSearchForProduct()
+                .SelectAddToCart()
+                .SelectSeeCart()
+                .FillProductQuantity("10")
+
+                //Act
+                .UpdateCart();
+
+        //Assert
+        softAssert.assertTrue(cartPage.informationMessage.isDisplayed(), "Information message is not displayed");
+        softAssert.assertEquals(cartPage.informationMessage.getText(), "Koszyk zaktualizowany.");
+
+        softAssert.assertAll();
+    }
 }
