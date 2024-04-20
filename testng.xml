@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Calculator Test" verbose="1">
+    <test name="Calculator" enabled="true">
+        <classes>
+            <class name="tests.AuthenticationTests">
+                <methods>
+                    <include name="SignInWithoutEmailTest"/>
+                    <include name="SignInWithoutPasswordTest"/>
+                    <include name="SignInWithIncorrectEmailAndPasswordTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
