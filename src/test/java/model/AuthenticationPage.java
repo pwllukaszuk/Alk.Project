@@ -31,8 +31,8 @@ public class AuthenticationPage extends HomePage {
         return FillInputFieldAndReturnNewView(emailInput, emailAddress, AuthenticationPage.class);
     }
 
-    public AuthenticationPage FillPasswordInput(String passwordAddress) {
-        return FillInputFieldAndReturnNewView(passwordInput, passwordAddress, AuthenticationPage.class);
+    public AuthenticationPage FillPasswordInput(String password) {
+        return FillInputFieldAndReturnNewView(passwordInput, password, AuthenticationPage.class);
     }
 
     public AuthenticationPage FillRegistrationEmail(String registrationEmail) {

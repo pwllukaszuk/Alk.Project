@@ -29,8 +29,8 @@ public class CartPage extends HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    public CartPage FillDiscountCode(String productName) {
-        return FillInputFieldAndReturnNewView(discountCodeInput, productName, CartPage.class);
+    public CartPage FillDiscountCode(String discountCode) {
+        return FillInputFieldAndReturnNewView(discountCodeInput, discountCode, CartPage.class);
     }
 
     public CartPage FillProductQuantity(String quantity) {
