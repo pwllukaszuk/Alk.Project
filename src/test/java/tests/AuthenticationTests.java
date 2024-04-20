@@ -1,15 +1,16 @@
 package tests;
 
 import testsData.TestData;
-import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class AuthenticationTests extends BaseTest {
 
+    private final String errorMessage = "Error message is not displayed";
+
     @Test
     public void SignInWithoutEmailTest() {
         //Arrange
-        var authenticationPage = mainPage
+        var authenticationPage = homePage
                 .SelectMyAccount()
                 .FillPasswordInput(TestData.IncorrectUserPassword)
 
@@ -17,14 +18,16 @@ public class AuthenticationTests extends BaseTest {
                 .SelectSignIn();
 
         //Assert
-        Assert.assertTrue(authenticationPage.errorMessage.isDisplayed());
-        Assert.assertEquals(authenticationPage.errorMessage.getText(), "Błąd: Nazwa użytkownika jest wymagana.");
+        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Błąd: Nazwa użytkownika jest wymagana.");
+
+        softAssert.assertAll();
     }
 
     @Test
     public void SignInWithoutPasswordTest() {
         //Arrange
-        var authenticationPage = mainPage
+        var authenticationPage = homePage
                 .SelectMyAccount()
                 .FillEmailInput(TestData.IncorrectUserEmail)
 
@@ -32,14 +35,16 @@ public class AuthenticationTests extends BaseTest {
                 .SelectSignIn();
 
         //Assert
-        Assert.assertTrue(authenticationPage.errorMessage.isDisplayed());
-        Assert.assertEquals(authenticationPage.errorMessage.getText(), "Error: The password field is empty.");
+        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Error: The password field is empty.");
+
+        softAssert.assertAll();
     }
 
     @Test
     public void SignInWithIncorrectEmailAndPasswordTest() {
         //Arrange
-        var authenticationPage = mainPage
+        var authenticationPage = homePage
                 .SelectMyAccount()
                 .FillEmailInput(TestData.IncorrectUserEmail)
                 .FillPasswordInput(TestData.IncorrectUserPassword)
@@ -48,7 +53,56 @@ public class AuthenticationTests extends BaseTest {
                 .SelectSignIn();
 
         //Assert
-        Assert.assertTrue(authenticationPage.errorMessage.isDisplayed());
-        Assert.assertEquals(authenticationPage.errorMessage.getText(), "Nieznana użytkownik. Proszę sprawdzić ponownie lub spróbować swój email.");
+        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Nieznana użytkownik. Proszę sprawdzić ponownie lub spróbować swój email.");
+
+        softAssert.assertAll();
+    }
+
+    @Test
+    public void ResetPasswordWithIncorrectEmail() {
+        //Arrange
+        var resetPasswordPage = homePage
+                .SelectMyAccount()
+                .SelectResetPassword()
+
+                //Act
+                .ClickResetPasswordButton();
+
+        //Assert
+        softAssert.assertTrue(resetPasswordPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertTrue(resetPasswordPage.emailOrUserLabel.isDisplayed(), errorMessage);
+        softAssert.assertEquals(resetPasswordPage.errorMessage.getText(), "Wpisz nazwę użytkownika lub e-mail.");
+
+        //Arrange
+        resetPasswordPage
+                .FillEmailInput(TestData.IncorrectUserEmail)
+
+                //Act
+                .ClickResetPasswordButton();
+
+        //Assert
+        softAssert.assertTrue(resetPasswordPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertTrue(resetPasswordPage.emailOrUserLabel.isDisplayed(), errorMessage);
+        softAssert.assertEquals(resetPasswordPage.errorMessage.getText(), "Błędna nazwa użytkownika lub adres e-mail.");
+
+        softAssert.assertAll();
+    }
+
+    @Test
+    public void SignUpIncorrectEmail() {
+        //Arrange
+        var authenticationPage = homePage
+                .SelectMyAccount()
+                .FillRegistrationEmail("testAccount@testAccount")
+
+                //Act
+                .SelectSignUp();
+
+        //Assert
+        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Błąd: Podaj poprawny adres e-mail.");
+
+        softAssert.assertAll();
     }
 }

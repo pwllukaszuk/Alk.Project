@@ -1,8 +1,9 @@
 package tests;
 
+import org.testng.asserts.SoftAssert;
 import testsData.Timeouts;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import model.SeleniumShopHomePage;
+import model.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,23 +14,25 @@ import java.time.Duration;
 public class BaseTest {
     public WebDriver driver;
     public WebDriverWait wait;
-    public SeleniumShopHomePage mainPage;
+    public SoftAssert softAssert;
+    public HomePage homePage;
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
         WebDriverManager.firefoxdriver().setup();
-
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait((Duration.ofSeconds(Timeouts.ImplicitWait)));
         wait = new WebDriverWait(driver, Duration.ofSeconds(Timeouts.ExplicitWait));
+        softAssert = new SoftAssert();
+
         driver.get("http://www.selenium-shop.pl");
 
-        mainPage = new SeleniumShopHomePage(driver, wait);
+        homePage = new HomePage(driver, wait);
     }
 
     @AfterMethod(alwaysRun = true)
-    public void tearDown()
-    {
+    public void tearDown() {
         driver.quit();
     }
 }
