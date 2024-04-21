@@ -13,7 +13,7 @@ public class AuthenticationTests extends BaseTest {
         //Arrange
         var authenticationPage = homePage
                 .SelectMyAccount()
-                .FillPasswordInput(TestData.IncorrectUserPassword)
+                .FillPassword(TestData.IncorrectUserPassword)
 
                 //Act
                 .SelectSignIn();
@@ -26,7 +26,7 @@ public class AuthenticationTests extends BaseTest {
         //Arrange
         authenticationPage
                 .ClearPasswordInput()
-                .FillEmailInput(TestData.IncorrectUserEmail)
+                .FillEmail(TestData.IncorrectUserEmail)
 
                 //Act
                 .SelectSignIn();
@@ -38,7 +38,7 @@ public class AuthenticationTests extends BaseTest {
         //Step 3
         //Arrange
         authenticationPage
-                .FillPasswordInput(TestData.IncorrectUserPassword)
+                .FillPassword(TestData.IncorrectUserPassword)
 
                 //Act
                 .SelectSignIn();

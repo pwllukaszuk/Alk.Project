@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AuthenticationPage extends HomePage {
+public class AuthenticationPage extends BasePage {
 
     @FindBy(id = "username")
     public WebElement emailInput;
@@ -13,12 +13,12 @@ public class AuthenticationPage extends HomePage {
     public WebElement registrationEmailInput;
     @FindBy(id = "password")
     public WebElement passwordInput;
+    @FindBy(className = "woocommerce-error")
+    public WebElement errorMessage;
     @FindBy(css = ".woocommerce-button.button.woocommerce-form-login__submit")
     public WebElement signInButton;
     @FindBy(css = ".woocommerce-Button.woocommerce-button.button.woocommerce-form-register__submit")
     public WebElement signUpButton;
-    @FindBy(className = "woocommerce-error")
-    public WebElement errorMessage;
     @FindBy(xpath = "//article//form//p[4]/a[1]")
     public WebElement resetPasswordButton;
 
@@ -27,11 +27,11 @@ public class AuthenticationPage extends HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    public AuthenticationPage FillEmailInput(String emailAddress) {
+    public AuthenticationPage FillEmail(String emailAddress) {
         return FillInputFieldAndReturnNewView(emailInput, emailAddress, AuthenticationPage.class);
     }
 
-    public AuthenticationPage FillPasswordInput(String password) {
+    public AuthenticationPage FillPassword(String password) {
         return FillInputFieldAndReturnNewView(passwordInput, password, AuthenticationPage.class);
     }
 

@@ -6,14 +6,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class CartPage extends HomePage {
-
-    @FindBy(css = ".cart-empty.woocommerce-info")
-    public WebElement informationLabel;
-    @FindBy(className = "return-to-shop")
-    public WebElement returnToShopButton;
+public class CartPage extends BasePage {
     @FindBy(id = "coupon_code")
     public WebElement discountCodeInput;
+    @FindBy(className = "return-to-shop")
+    public WebElement returnToShopButton;
+    @FindBy(className = "wc-proceed-to-checkout")
+    public WebElement goToCheckOutButton;
     @FindBy(className = "button")
     public WebElement submitCodeButton;
     @FindBy(className = "woocommerce-error")
@@ -22,10 +21,10 @@ public class CartPage extends HomePage {
     public WebElement informationMessage;
     @FindBy(css = ".input-text.qty.text")
     public WebElement productQuantity;
+    @FindBy(css = ".cart-empty.woocommerce-info")
+    public WebElement informationLabel;
     @FindBy(xpath = "//button[@class='button' and @name='update_cart']")
     public WebElement updateCartButton;
-    @FindBy(className = "wc-proceed-to-checkout")
-    public WebElement goToCheckOutButton;
 
     public CartPage(WebDriver driver) {
         super(driver);

@@ -1,13 +1,13 @@
 package tests;
 
-import org.testng.asserts.SoftAssert;
-import testsData.Timeouts;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.testng.asserts.SoftAssert;
 import model.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
+import testsData.Timeouts;
 
 import java.time.Duration;
 

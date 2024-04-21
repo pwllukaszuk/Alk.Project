@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df102707-f89b-45fb-84fd-7e52957a4547" name="Changes" comment="merge 3 small tests into one">
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/CheckoutPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CheckoutTests.java" afterDir="false" />
+    <list default="true" id="df102707-f89b-45fb-84fd-7e52957a4547" name="Changes" comment="super super">
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/model/AuthenticationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/AuthenticationPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/model/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/CheckoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CheckoutPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/model/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/model/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/ResetPasswordPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ResetPasswordPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/SearchForProductsField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/SearchForProductsField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AuthenticationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AuthenticationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsData/Timeouts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsData/Timeouts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CheckoutTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CheckoutTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testsData/TestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsData/TestData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +64,7 @@
     "TestNG.CalculatorTest.executor": "Run",
     "TestNG.CalculatorTest.testAdd.executor": "Run",
     "TestNG.CalculatorTest.testMultiply.executor": "Run",
+    "TestNG.CheckoutTests.CheckoutWithoutProvidingCheckoutInformation.executor": "Run",
     "TestNG.CheckoutTests.IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation.executor": "Run",
     "TestNG.FutureGoodTest.executor": "Run",
     "TestNG.FutureGoodTest.testSomething.executor": "Run",
@@ -90,7 +94,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/User/IdeaProjects/Alk.Project/testng.xml">
+  <component name="RunManager" selected="TestNG.CheckoutTests.CheckoutWithoutProvidingCheckoutInformation">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Alk.SeleniumShop.Project" />
       <method v="2">
@@ -164,6 +168,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CheckoutTests.CheckoutWithoutProvidingCheckoutInformation" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Alk.SeleniumShop.Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CheckoutTests" />
+      <option name="METHOD_NAME" value="CheckoutWithoutProvidingCheckoutInformation" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CheckoutTests.IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Alk.SeleniumShop.Project" />
       <extension name="coverage">
@@ -182,43 +204,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderTests.UpdateCartTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Alk.SeleniumShop.Project" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.OrderTests" />
-      <option name="METHOD_NAME" value="UpdateCartTest" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="TestNG.AuthenticationTests.SignInValidationTest" />
+      <item itemvalue="TestNG.CheckoutTests.CheckoutWithoutProvidingCheckoutInformation" />
       <item itemvalue="TestNG.CheckoutTests.IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation" />
-      <item itemvalue="TestNG.OrderTests.UpdateCartTest" />
       <item itemvalue="TestNG.AuthenticationTests" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/Alk.Project/testng.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CheckoutTests.CheckoutWithoutProvidingCheckoutInformation" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/Alk.Project/testng.xml" />
         <item itemvalue="TestNG.CheckoutTests.IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation" />
-        <item itemvalue="TestNG.OrderTests.UpdateCartTest" />
         <item itemvalue="TestNG.AuthenticationTests.SignInValidationTest" />
         <item itemvalue="TestNG.AuthenticationTests" />
       </list>
@@ -288,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713682396999</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="super super">
+      <option name="closed" value="true" />
+      <created>1713691638769</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713691638769</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -310,7 +315,8 @@
     <MESSAGE value="new tests added" />
     <MESSAGE value="small fixes" />
     <MESSAGE value="merge 3 small tests into one" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge 3 small tests into one" />
+    <MESSAGE value="super super" />
+    <option name="LAST_COMMIT_MESSAGE" value="super super" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
