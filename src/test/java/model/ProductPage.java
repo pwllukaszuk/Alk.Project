@@ -23,7 +23,7 @@ public class ProductPage extends HomePage {
     public WebElement seeCartButton;
 
     public ProductPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 

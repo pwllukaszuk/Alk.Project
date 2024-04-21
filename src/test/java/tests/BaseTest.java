@@ -22,13 +22,12 @@ public class BaseTest {
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait((Duration.ofSeconds(Timeouts.ImplicitWait)));
         wait = new WebDriverWait(driver, Duration.ofSeconds(Timeouts.ExplicitWait));
         softAssert = new SoftAssert();
 
         driver.get("http://www.selenium-shop.pl");
 
-        homePage = new HomePage(driver, wait);
+        homePage = new HomePage(driver);
     }
 
     @AfterMethod(alwaysRun = true)

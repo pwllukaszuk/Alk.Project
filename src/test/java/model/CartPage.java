@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CartPage extends HomePage {
 
@@ -23,9 +24,11 @@ public class CartPage extends HomePage {
     public WebElement productQuantity;
     @FindBy(xpath = "//button[@class='button' and @name='update_cart']")
     public WebElement updateCartButton;
+    @FindBy(className = "wc-proceed-to-checkout")
+    public WebElement goToCheckOutButton;
 
     public CartPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -42,6 +45,13 @@ public class CartPage extends HomePage {
     }
 
     public CartPage UpdateCart() {
-        return ClickAndReturnNewView(updateCartButton, CartPage.class);
+        updateCartButton.click();
+        wait.until(ExpectedConditions.visibilityOf(informationMessage));
+
+        return new CartPage(driver);
+    }
+
+    public CheckoutPage SelectGoToCheckout() {
+        return ClickAndReturnNewView(goToCheckOutButton, CheckoutPage.class);
     }
 }

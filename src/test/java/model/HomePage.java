@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.time.Duration;
 
 public class HomePage {
 
@@ -27,9 +28,9 @@ public class HomePage {
     @FindBy(id = "menu-item-138")
     public WebElement orderButton;
 
-    public HomePage(WebDriver driver, WebDriverWait wait) {
+    public HomePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = wait;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }
 

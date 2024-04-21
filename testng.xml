@@ -22,6 +22,11 @@
                     <include name="SearchForProductTest"/>
                 </methods>
             </class>
+            <class name="tests.CheckoutTests">
+                <methods>
+                    <include name="IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

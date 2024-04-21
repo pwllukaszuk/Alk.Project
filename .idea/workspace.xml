@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df102707-f89b-45fb-84fd-7e52957a4547" name="Changes" comment="small fixes">
+    <list default="true" id="df102707-f89b-45fb-84fd-7e52957a4547" name="Changes" comment="merge 3 small tests into one">
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/CheckoutPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CheckoutTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/model/AuthenticationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/AuthenticationPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AuthenticationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AuthenticationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testsData/Timeouts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsData/Timeouts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +50,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.AuthenticationTests.ResetPasswordWithIncorrectEmail.executor": "Run",
+    "TestNG.AuthenticationTests.SignInValidationTest.executor": "Run",
     "TestNG.AuthenticationTests.SignInWithIncorrectCredentials.executor": "Run",
     "TestNG.AuthenticationTests.SignInWithIncorrectCredentialsTest (1).executor": "Run",
     "TestNG.AuthenticationTests.SignInWithIncorrectCredentialsTest.executor": "Debug",
@@ -52,6 +61,7 @@
     "TestNG.CalculatorTest.executor": "Run",
     "TestNG.CalculatorTest.testAdd.executor": "Run",
     "TestNG.CalculatorTest.testMultiply.executor": "Run",
+    "TestNG.CheckoutTests.IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation.executor": "Run",
     "TestNG.FutureGoodTest.executor": "Run",
     "TestNG.FutureGoodTest.testSomething.executor": "Run",
     "TestNG.OrderTests.InformationAboutEmptyCartDisplayedTest.executor": "Run",
@@ -80,7 +90,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.AuthenticationTests.SignInWithoutEmailTest">
+  <component name="RunManager" selected="TestNG.C:/Users/User/IdeaProjects/Alk.Project/testng.xml">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Alk.SeleniumShop.Project" />
       <method v="2">
@@ -94,7 +104,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthenticationTests.ResetPasswordWithIncorrectEmail" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthenticationTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Alk.SeleniumShop.Project" />
       <extension name="coverage">
         <pattern>
@@ -104,15 +114,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.AuthenticationTests" />
-      <option name="METHOD_NAME" value="ResetPasswordWithIncorrectEmail" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthenticationTests.SignInWithoutEmailTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthenticationTests.SignInValidationTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Alk.SeleniumShop.Project" />
       <extension name="coverage">
         <pattern>
@@ -122,7 +131,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.AuthenticationTests" />
-      <option name="METHOD_NAME" value="SignInWithoutEmailTest" />
+      <option name="METHOD_NAME" value="SignInValidationTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -155,7 +164,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderTests.UpdateCartTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CheckoutTests.IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Alk.SeleniumShop.Project" />
       <extension name="coverage">
         <pattern>
@@ -164,8 +173,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.OrderTests" />
-      <option name="METHOD_NAME" value="UpdateCartTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.CheckoutTests" />
+      <option name="METHOD_NAME" value="IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -173,18 +182,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderTests.WrongDiscountCodeProvidedTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderTests.UpdateCartTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Alk.SeleniumShop.Project" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.OrderTests" />
-      <option name="METHOD_NAME" value="WrongDiscountCodeProvidedTest" />
+      <option name="METHOD_NAME" value="UpdateCartTest" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
@@ -192,19 +208,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.AuthenticationTests.SignInValidationTest" />
+      <item itemvalue="TestNG.CheckoutTests.IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation" />
       <item itemvalue="TestNG.OrderTests.UpdateCartTest" />
-      <item itemvalue="TestNG.OrderTests.WrongDiscountCodeProvidedTest" />
-      <item itemvalue="TestNG.AuthenticationTests.ResetPasswordWithIncorrectEmail" />
-      <item itemvalue="TestNG.AuthenticationTests.SignInWithoutEmailTest" />
+      <item itemvalue="TestNG.AuthenticationTests" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/Alk.Project/testng.xml" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.AuthenticationTests.SignInWithoutEmailTest" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/Alk.Project/testng.xml" />
+        <item itemvalue="TestNG.CheckoutTests.IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation" />
         <item itemvalue="TestNG.OrderTests.UpdateCartTest" />
-        <item itemvalue="TestNG.OrderTests.WrongDiscountCodeProvidedTest" />
-        <item itemvalue="TestNG.AuthenticationTests.ResetPasswordWithIncorrectEmail" />
+        <item itemvalue="TestNG.AuthenticationTests.SignInValidationTest" />
+        <item itemvalue="TestNG.AuthenticationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713651872888</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="merge 3 small tests into one">
+      <option name="closed" value="true" />
+      <created>1713682396999</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713682396999</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,7 +309,8 @@
     <MESSAGE value="few tests added + generic methods" />
     <MESSAGE value="new tests added" />
     <MESSAGE value="small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
+    <MESSAGE value="merge 3 small tests into one" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge 3 small tests into one" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

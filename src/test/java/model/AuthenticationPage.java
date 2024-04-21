@@ -1,6 +1,5 @@
 package model;
 
-import com.beust.ah.A;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,7 +23,7 @@ public class AuthenticationPage extends HomePage {
     public WebElement resetPasswordButton;
 
     public AuthenticationPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -38,10 +37,6 @@ public class AuthenticationPage extends HomePage {
 
     public AuthenticationPage FillRegistrationEmail(String registrationEmail) {
         return FillInputFieldAndReturnNewView(registrationEmailInput, registrationEmail, AuthenticationPage.class);
-    }
-
-    public AuthenticationPage ClearRegistrationEmail() {
-        return ClearField(registrationEmailInput);
     }
 
     public AuthenticationPage ClearEmailInput() {
