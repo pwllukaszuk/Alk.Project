@@ -4,9 +4,7 @@
         <classes>
             <class name="tests.AuthenticationTests">
                 <methods>
-                    <include name="SignInWithoutEmailTest"/>
-                    <include name="SignInWithoutPasswordTest"/>
-                    <include name="SignInWithIncorrectEmailAndPasswordTest"/>
+                    <include name="SignInValidationTest"/>
                     <include name="ResetPasswordWithIncorrectEmail"/>
                     <include name="SignUpIncorrectEmail"/>
                 </methods>

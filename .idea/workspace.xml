@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df102707-f89b-45fb-84fd-7e52957a4547" name="Changes" comment="few tests added + generic methods">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/OrderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/OrderTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsData/TestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsData/TestData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+    <list default="true" id="df102707-f89b-45fb-84fd-7e52957a4547" name="Changes" comment="small fixes">
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/AuthenticationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/AuthenticationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AuthenticationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AuthenticationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +80,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/User/IdeaProjects/Alk.Project/testng.xml">
+  <component name="RunManager" selected="TestNG.AuthenticationTests.SignInWithoutEmailTest">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Alk.SeleniumShop.Project" />
       <method v="2">
@@ -93,23 +90,6 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="Alk.SeleniumShop.Project" />
       <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthenticationTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Alk.SeleniumShop.Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.AuthenticationTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -125,6 +105,24 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.AuthenticationTests" />
       <option name="METHOD_NAME" value="ResetPasswordWithIncorrectEmail" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticationTests.SignInWithoutEmailTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Alk.SeleniumShop.Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.AuthenticationTests" />
+      <option name="METHOD_NAME" value="SignInWithoutEmailTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -196,17 +194,17 @@
     <list>
       <item itemvalue="TestNG.OrderTests.UpdateCartTest" />
       <item itemvalue="TestNG.OrderTests.WrongDiscountCodeProvidedTest" />
-      <item itemvalue="TestNG.AuthenticationTests" />
       <item itemvalue="TestNG.AuthenticationTests.ResetPasswordWithIncorrectEmail" />
+      <item itemvalue="TestNG.AuthenticationTests.SignInWithoutEmailTest" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/Alk.Project/testng.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.AuthenticationTests.SignInWithoutEmailTest" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/Alk.Project/testng.xml" />
         <item itemvalue="TestNG.OrderTests.UpdateCartTest" />
         <item itemvalue="TestNG.OrderTests.WrongDiscountCodeProvidedTest" />
         <item itemvalue="TestNG.AuthenticationTests.ResetPasswordWithIncorrectEmail" />
-        <item itemvalue="TestNG.AuthenticationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +248,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713647891712</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="new tests added">
+      <option name="closed" value="true" />
+      <created>1713651335050</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713651335050</updated>
+    </task>
+    <task id="LOCAL-00005" summary="small fixes">
+      <option name="closed" value="true" />
+      <created>1713651872888</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713651872888</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,7 +283,9 @@
     <MESSAGE value="add junit to pom" />
     <MESSAGE value="add authentication tests and a little model" />
     <MESSAGE value="few tests added + generic methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="few tests added + generic methods" />
+    <MESSAGE value="new tests added" />
+    <MESSAGE value="small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

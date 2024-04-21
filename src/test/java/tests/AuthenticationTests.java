@@ -8,7 +8,8 @@ public class AuthenticationTests extends BaseTest {
     private final String errorMessage = "Error message is not displayed";
 
     @Test
-    public void SignInWithoutEmailTest() {
+    public void SignInValidationTest() {
+        //Step 1
         //Arrange
         var authenticationPage = homePage
                 .SelectMyAccount()
@@ -21,14 +22,10 @@ public class AuthenticationTests extends BaseTest {
         softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
         softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Błąd: Nazwa użytkownika jest wymagana.");
 
-        softAssert.assertAll();
-    }
-
-    @Test
-    public void SignInWithoutPasswordTest() {
+        //Step 2
         //Arrange
-        var authenticationPage = homePage
-                .SelectMyAccount()
+        authenticationPage
+                .ClearPasswordInput()
                 .FillEmailInput(TestData.IncorrectUserEmail)
 
                 //Act
@@ -38,15 +35,9 @@ public class AuthenticationTests extends BaseTest {
         softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
         softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Error: The password field is empty.");
 
-        softAssert.assertAll();
-    }
-
-    @Test
-    public void SignInWithIncorrectEmailAndPasswordTest() {
+        //Step 3
         //Arrange
-        var authenticationPage = homePage
-                .SelectMyAccount()
-                .FillEmailInput(TestData.IncorrectUserEmail)
+        authenticationPage
                 .FillPasswordInput(TestData.IncorrectUserPassword)
 
                 //Act
@@ -55,6 +46,19 @@ public class AuthenticationTests extends BaseTest {
         //Assert
         softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
         softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Nieznana użytkownik. Proszę sprawdzić ponownie lub spróbować swój email.");
+
+        //Step 4
+        //Arrange
+        authenticationPage
+                .ClearEmailInput()
+                .ClearPasswordInput()
+
+                //Act
+                .SelectSignIn();
+
+        //Assert
+        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Błąd: Nazwa użytkownika jest wymagana.");
 
         softAssert.assertAll();
     }

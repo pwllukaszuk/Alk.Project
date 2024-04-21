@@ -1,5 +1,6 @@
 package model;
 
+import com.beust.ah.A;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,6 +40,18 @@ public class AuthenticationPage extends HomePage {
         return FillInputFieldAndReturnNewView(registrationEmailInput, registrationEmail, AuthenticationPage.class);
     }
 
+    public AuthenticationPage ClearRegistrationEmail() {
+        return ClearField(registrationEmailInput);
+    }
+
+    public AuthenticationPage ClearEmailInput() {
+        return ClearField(emailInput);
+    }
+
+    public AuthenticationPage ClearPasswordInput() {
+        return ClearField(passwordInput);
+    }
+
     public AuthenticationPage SelectSignIn() {
         return ClickAndReturnNewView(signInButton, AuthenticationPage.class);
     }
@@ -49,5 +62,11 @@ public class AuthenticationPage extends HomePage {
 
     public ResetPasswordPage SelectResetPassword() {
         return ClickAndReturnNewView(resetPasswordButton, ResetPasswordPage.class);
+    }
+
+    private AuthenticationPage ClearField(WebElement webElement) {
+        webElement.click();
+        webElement.clear();
+        return new AuthenticationPage(driver);
     }
 }
