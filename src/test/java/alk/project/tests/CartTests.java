@@ -3,7 +3,7 @@ package alk.project.tests;
 import org.testng.annotations.Test;
 import alk.project.testData.TestData;
 
-public class OrderTests extends BaseTest {
+public class CartTests extends BaseTest {
 
     @Test
     public void InformationAboutEmptyCartDisplayedTest() {
@@ -20,7 +20,7 @@ public class OrderTests extends BaseTest {
     }
 
     @Test
-    public void ProductAddedToCart() throws InterruptedException {
+    public void ProductAddedToCart() {
         //Arrange
         var productPage = homePage
                 .SelectSearchForProducts()

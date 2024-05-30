@@ -9,7 +9,7 @@
                     <include name="SignUpIncorrectEmail"/>
                 </methods>
             </class>
-            <class name="alk.project.tests.OrderTests">
+            <class name="alk.project.tests.CartTests">
                 <methods>
                     <include name="InformationAboutEmptyCartDisplayedTest"/>
                     <include name="WrongDiscountCodeProvidedTest"/>
