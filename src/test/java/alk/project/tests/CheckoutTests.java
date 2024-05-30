@@ -73,7 +73,7 @@ public class CheckoutTests extends BaseTest {
         softAssert.assertEquals(orderConfirmationAndDetails.orderTotalPrice.getText(), "170,00 zł");
         softAssert.assertTrue(orderConfirmationAndDetails.paymentMethodLabel.isDisplayed(), "Payment method label is not displayed");
         softAssert.assertNotNull(orderConfirmationAndDetails.paymentMethod.getText(), "Payment method is not empty.");
-        softAssert.assertEquals(orderConfirmationAndDetails.orderReceivedInformation.getText(), "", "Order received information not equal");
+        softAssert.assertEquals(orderConfirmationAndDetails.orderReceivedInformation.getText(), "Dziękujemy. Otrzymaliśmy Twoje zamówienie.", "Order received information not equal");
         softAssert.assertAll();
     }
 }

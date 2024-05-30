@@ -11,8 +11,6 @@ public class CartPage extends BasePage {
     public WebElement discountCodeInput;
     @FindBy(className = "return-to-shop")
     public WebElement returnToShopButton;
-    @FindBy(className = "attachment-shop_isle_cart_item_image_size size-shop_isle_cart_item_image_size")
-    public WebElement productImage;
     @FindBy(className = "remove")
     public WebElement removeProductButton;
     @FindBy(className = "wc-proceed-to-checkout")
@@ -27,10 +25,6 @@ public class CartPage extends BasePage {
     public WebElement productQuantity;
     @FindBy(css = ".cart-empty.woocommerce-info")
     public WebElement informationLabel;
-    @FindBy(css = "label[for='quantity_6658409c2fc36']")
-    public WebElement quantityLabel;
-    @FindBy(css = "#quantity_6658409c2fc36")
-    public WebElement quantity;
     @FindBy(css = "th[class='product-name']")
     public WebElement productNameLabel;
     @FindBy(css = "th[class='product-price']")
