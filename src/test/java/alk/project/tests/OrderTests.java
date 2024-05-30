@@ -1,7 +1,7 @@
-package tests;
+package alk.project.tests;
 
 import org.testng.annotations.Test;
-import testsData.TestData;
+import alk.project.testData.TestData;
 
 public class OrderTests extends BaseTest {
 
@@ -20,7 +20,7 @@ public class OrderTests extends BaseTest {
     }
 
     @Test
-    public void ProductAddedToCart() {
+    public void ProductAddedToCart() throws InterruptedException {
         //Arrange
         var productPage = homePage
                 .SelectSearchForProducts()
@@ -42,7 +42,18 @@ public class OrderTests extends BaseTest {
                 .SelectSeeCart();
 
         //Assert
-        //TODO: Add elements to model and assert that product is visible in cart.
+        softAssert.assertTrue(cartPage.productImage.isDisplayed(), "Product image not displayed");
+        softAssert.assertTrue(cartPage.removeProductButton.isDisplayed(), "Remove product button not displayed");
+        softAssert.assertEquals(cartPage.quantity.getText(), "5", "Quantity not equal");
+        softAssert.assertTrue(cartPage.quantityLabel.isDisplayed(), "Quantity label not displayed");
+        softAssert.assertTrue(cartPage.productNameLabel.isDisplayed(), "Product name label not displayed");
+        softAssert.assertTrue(cartPage.productPriceLabel.isDisplayed(), "Product price label not displayed");
+        softAssert.assertTrue(cartPage.productQuantityLabel.isDisplayed(), "Product quantity label not displayed");
+        softAssert.assertEquals(cartPage.productSubTotal.isDisplayed(), "Product subtotal label not displayed");
+        softAssert.assertEquals(cartPage.productName.getText(), "KOSZULKA MANCHESTER UNITED", "Product name not equal");
+        softAssert.assertEquals(cartPage.productPrice.getText(), "170 ZŁ", "Product price not equal");
+        softAssert.assertEquals(cartPage.totalProductsPrice.getText(), "850 ZŁ", "Total price not equal");
+
         softAssert.assertAll();
     }
 

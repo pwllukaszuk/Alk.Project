@@ -1,4 +1,4 @@
-package model;
+package alk.project.model;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
@@ -97,12 +97,14 @@ public class CheckoutPage extends BasePage {
         return new CheckoutPage(driver);
     }
 
-    public CheckoutPage SelectBuyAndPayWithCheckoutData() {
+    public OrderConfirmationAndDetails SelectBuyAndPayWithCheckoutData() {
         wait.until(ExpectedConditions.invisibilityOf(blockOverlay));
         wait.until(ExpectedConditions.elementToBeClickable(buyAndPayButton));
 
         buyAndPayButton.click();
 
-        return new CheckoutPage(driver);
+        wait.until(ExpectedConditions.invisibilityOf(buyAndPayButton));
+
+        return new OrderConfirmationAndDetails(driver);
     }
 }

@@ -1,11 +1,11 @@
-package tests;
+package alk.project.tests;
 
-import testsData.TestData;
+import alk.project.testData.TestData;
 import org.testng.annotations.*;
 
 public class AuthenticationTests extends BaseTest {
 
-    private final String errorMessage = "Error message is not displayed";
+    private final String assertFailureMessage = "Error message is not displayed";
 
     @Test
     public void SignInValidationTest() {
@@ -19,7 +19,7 @@ public class AuthenticationTests extends BaseTest {
                 .SelectSignIn();
 
         //Assert
-        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), assertFailureMessage);
         softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Błąd: Nazwa użytkownika jest wymagana.");
 
         //Step 2
@@ -32,7 +32,7 @@ public class AuthenticationTests extends BaseTest {
                 .SelectSignIn();
 
         //Assert
-        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), assertFailureMessage);
         softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Error: The password field is empty.");
 
         //Step 3
@@ -44,7 +44,7 @@ public class AuthenticationTests extends BaseTest {
                 .SelectSignIn();
 
         //Assert
-        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), assertFailureMessage);
         softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Nieznana użytkownik. Proszę sprawdzić ponownie lub spróbować swój email.");
 
         //Step 4
@@ -57,7 +57,7 @@ public class AuthenticationTests extends BaseTest {
                 .SelectSignIn();
 
         //Assert
-        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), assertFailureMessage);
         softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Błąd: Nazwa użytkownika jest wymagana.");
 
         softAssert.assertAll();
@@ -74,8 +74,8 @@ public class AuthenticationTests extends BaseTest {
                 .ClickResetPasswordButton();
 
         //Assert
-        softAssert.assertTrue(resetPasswordPage.errorMessage.isDisplayed(), errorMessage);
-        softAssert.assertTrue(resetPasswordPage.emailOrUserLabel.isDisplayed(), errorMessage);
+        softAssert.assertTrue(resetPasswordPage.errorMessage.isDisplayed(), assertFailureMessage);
+        softAssert.assertTrue(resetPasswordPage.emailOrUserLabel.isDisplayed(), assertFailureMessage);
         softAssert.assertEquals(resetPasswordPage.errorMessage.getText(), "Wpisz nazwę użytkownika lub e-mail.");
 
         //Arrange
@@ -86,8 +86,8 @@ public class AuthenticationTests extends BaseTest {
                 .ClickResetPasswordButton();
 
         //Assert
-        softAssert.assertTrue(resetPasswordPage.errorMessage.isDisplayed(), errorMessage);
-        softAssert.assertTrue(resetPasswordPage.emailOrUserLabel.isDisplayed(), errorMessage);
+        softAssert.assertTrue(resetPasswordPage.errorMessage.isDisplayed(), assertFailureMessage);
+        softAssert.assertTrue(resetPasswordPage.emailOrUserLabel.isDisplayed(), assertFailureMessage);
         softAssert.assertEquals(resetPasswordPage.errorMessage.getText(), "Błędna nazwa użytkownika lub adres e-mail.");
 
         softAssert.assertAll();
@@ -104,7 +104,7 @@ public class AuthenticationTests extends BaseTest {
                 .SelectSignUp();
 
         //Assert
-        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), errorMessage);
+        softAssert.assertTrue(authenticationPage.errorMessage.isDisplayed(), assertFailureMessage);
         softAssert.assertEquals(authenticationPage.errorMessage.getText(), "Błąd: Podaj poprawny adres e-mail.");
 
         softAssert.assertAll();

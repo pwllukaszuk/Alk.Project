@@ -1,7 +1,7 @@
-package tests;
+package alk.project.tests;
 
 import org.testng.annotations.Test;
-import testsData.TestData;
+import alk.project.testData.TestData;
 
 public class SearchForProductsTests extends BaseTest {
 

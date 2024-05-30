@@ -1,4 +1,4 @@
-package testsData;
+package alk.project.testData;
 
 public class TestData {
 

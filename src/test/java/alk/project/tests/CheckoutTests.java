@@ -1,14 +1,15 @@
-package tests;
+package alk.project.tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import testsData.TestData;
+import alk.project.testData.TestData;
 
-import java.time.Duration;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class CheckoutTests extends BaseTest {
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM, yyyy", Locale.forLanguageTag("pl-PL"));
+
     @Test
     public void IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation() {
         //Arrange
@@ -39,9 +40,11 @@ public class CheckoutTests extends BaseTest {
     }
 
     @Test
-    public void CheckoutWithoutProvidingCheckoutInformation() throws InterruptedException {
+    public void CheckoutWithProvidingCheckoutInformation() {
         //Arrange
-        var checkoutPage = homePage
+        String expectedDate = dateFormat.format(new Date());
+
+        var orderConfirmationAndDetails = homePage
                 .SelectSearchForProducts()
                 .FillProductName(TestData.ManchesterUnitedShirt)
                 .ClickSearchForProduct()
@@ -59,10 +62,18 @@ public class CheckoutTests extends BaseTest {
                 //Act
                 .SelectBuyAndPayWithCheckoutData();
 
-        Thread.sleep(Duration.ofMinutes(5));
-
         //Assert
-        //TODO: Add model and assertions
+        softAssert.assertEquals(orderConfirmationAndDetails.orderNotice.getText(), "Dziękujemy. Otrzymaliśmy Twoje zamówienie.");
+        softAssert.assertEquals(orderConfirmationAndDetails.orderDetailsTitle.getText(), "Szczegóły zamówienia");
+        softAssert.assertTrue(orderConfirmationAndDetails.orderNumberLabel.isDisplayed(), "Order number label is not displayed");
+        softAssert.assertNotNull(orderConfirmationAndDetails.orderNumber.getText(), "Order number is not empty.");
+        softAssert.assertTrue(orderConfirmationAndDetails.orderDateLabel.isDisplayed(), "Order date label is not displayed");
+        softAssert.assertEquals(orderConfirmationAndDetails.orderDate.getText(), expectedDate, "Order date does not match today's date");
+        softAssert.assertTrue(orderConfirmationAndDetails.orderTotalPriceLabel.isDisplayed(), "Order total price label is not displayed");
+        softAssert.assertEquals(orderConfirmationAndDetails.orderTotalPrice.getText(), "170,00 zł");
+        softAssert.assertTrue(orderConfirmationAndDetails.paymentMethodLabel.isDisplayed(), "Payment method label is not displayed");
+        softAssert.assertNotNull(orderConfirmationAndDetails.paymentMethod.getText(), "Payment method is not empty.");
+        softAssert.assertEquals(orderConfirmationAndDetails.orderReceivedInformation.getText(), "", "Order received information not equal");
         softAssert.assertAll();
     }
 }

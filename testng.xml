@@ -2,29 +2,31 @@
 <suite name="Selenium Shop Tests" verbose="1">
     <test name="SeleniumShopTests" enabled="true">
         <classes>
-            <class name="tests.AuthenticationTests">
+            <class name="alk.project.tests.AuthenticationTests">
                 <methods>
                     <include name="SignInValidationTest"/>
                     <include name="ResetPasswordWithIncorrectEmail"/>
                     <include name="SignUpIncorrectEmail"/>
                 </methods>
             </class>
-            <class name="tests.OrderTests">
+            <class name="alk.project.tests.OrderTests">
                 <methods>
                     <include name="InformationAboutEmptyCartDisplayedTest"/>
                     <include name="WrongDiscountCodeProvidedTest"/>
                     <include name="DiscountCodeNotProvidedTest"/>
                     <include name="UpdateCartTest"/>
+                    <include name="ProductAddedToCart"/>
                 </methods>
             </class>
-            <class name="tests.SearchForProductsTests">
+            <class name="alk.project.tests.SearchForProductsTests">
                 <methods>
                     <include name="SearchForProductTest"/>
                 </methods>
             </class>
-            <class name="tests.CheckoutTests">
+            <class name="alk.project.tests.CheckoutTests">
                 <methods>
                     <include name="IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation"/>
+                    <include name="CheckoutWithProvidingCheckoutInformation"/>
                 </methods>
             </class>
         </classes>
