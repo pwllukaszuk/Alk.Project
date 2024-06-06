@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class CheckoutTests extends BaseTest {
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM, yyyy", Locale.forLanguageTag("pl-PL"));
+    SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMM, yyyy", Locale.forLanguageTag("pl-PL"));
 
     @Test
     public void IsNotPossibleToCheckoutWithoutProvidingCheckoutInformation() {
